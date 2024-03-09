@@ -25,3 +25,30 @@ class Keranjang:
             current = current.next
             i += 1
 
+    def total_harga(self):
+        total = 0
+        current = self.head
+        while current:
+            total += current.harga
+            current = current.next
+        return total
+
+def input_pesanan():
+    print("Menu yang tersedia:")
+    print("1. Miexue Ice Cream : 5000")
+    print("2. Boba Shake : 16000")
+    print("3. Mi Sundae : 14000")
+    print("4. Mi Ganas : 11000")
+    print("5. Creamy Mango Boba : 22000")
+    pilihan = int(input("Masukkan pilihan menu (masukkan dengan nomer!): "))
+    if pilihan == 1:
+        return Menu("Miexue Ice Cream", 5000)
+    elif pilihan == 2:
+        return Menu("Boba Shake", 16000)
+    elif pilihan == 3:
+        return Menu("Mi Sundae", 14000)
+    elif pilihan == 4:
+        return Menu("Mi Ganas", 11000)
+    elif pilihan == 5:
+        return Menu("Creamy Mango Boba", 22000)
+    else:
