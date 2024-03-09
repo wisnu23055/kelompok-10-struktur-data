@@ -1,0 +1,27 @@
+class Menu:
+    def __init__(self, nama, harga):
+        self.nama = nama
+        self.harga = harga
+        self.next = None
+
+class Keranjang:
+    def __init__(self):
+        self.head = None
+
+    def tambah_pesanan(self, menu):
+        if not self.head:
+            self.head = menu
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = menu
+
+    def tampilkan_pesanan(self):
+        current = self.head
+        i = 1
+        while current:
+            print(f"{i}. {current.nama} {current.harga} rupiah")
+            current = current.next
+            i += 1
+
