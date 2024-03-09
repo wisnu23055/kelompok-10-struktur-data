@@ -52,3 +52,32 @@ def input_pesanan():
     elif pilihan == 5:
         return Menu("Creamy Mango Boba", 22000)
     else:
+ print("Pilihan tidak valid")
+        return None
+
+def main():
+    keranjang = Keranjang()
+    while True:
+        print("\n1. Tampilkan menu pesanan")
+        print("2. Tampilkan pesanan yang sudah ditambahkan")
+        print("3. Jumlah Harga yang dibayarkan")
+        print("4. Bayar pesanan")
+        print("5. Keluar")
+        pilihan = int(input("Masukkan pilihan (masukkan dengan nomer!): "))
+        if pilihan == 1:
+            pesanan = input_pesanan()
+            if pesanan:
+                keranjang.tambah_pesanan(pesanan)
+        elif pilihan == 2:
+            keranjang.tampilkan_pesanan()
+        elif pilihan == 3:
+            print("Total harga yang harus dibayarkan adalah", keranjang.total_harga(), "rupiah")
+        elif pilihan == 4:
+            print("Total biaya yang harus dibayarkan adalah", keranjang.total_harga(), "rupiah, terimakasih sudah memesan!")
+            break
+        elif pilihan == 5:
+            break
+        else:
+            print("Pilihan tidak valid")
+
+main()
