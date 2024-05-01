@@ -1,1 +1,29 @@
+class Peta ():
+    def __init__ (self):
+        self.adjlist = {}
 
+    def printKota (self) :
+        for Kota in self.adjlist :
+            print (Kota, ":", self.adjlist [Kota])
+
+    def tambahkanKota (self,Kota):
+        if Kota  not in self.adjlist :
+            self.adjlist[Kota] = []
+            return True
+        return False
+    
+    def hapuskanKota (self,kotaDihapuskan):
+        if kotaDihapuskan in self.adjlist:
+
+            for kotaLain in self.adjlist :
+                if kotaDihapuskan in self.adjlist[kotaLain]:
+                    self.adjlist [kotaLain].remove (kotaDihapuskan)
+            del self.adjlist [kotaDihapuskan]
+            return True
+        return False
+
+    def tambahJalan (self,Kota1,Kota2):
+        if Kota1 in self.adjlist and Kota2 in self.adjlist:
+            # Masukan Kota 1 Di List Kota 2
+            self.adjlist[Kota1].append(Kota2)
+            # Masukan Kota 2 Di List Kota 1
