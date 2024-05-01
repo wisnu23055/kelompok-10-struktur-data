@@ -27,3 +27,33 @@ class Peta ():
             # Masukan Kota 1 Di List Kota 2
             self.adjlist[Kota1].append(Kota2)
             # Masukan Kota 2 Di List Kota 1
+             self.adjlist[Kota2].append(Kota1)
+            return True
+        return False
+
+    def hapusJalan  (self,kota1,kota2):
+        if kota1 in self.adjlist and kota2 in self.adjlist :
+            self.adjlist [kota2].remove (kota1)
+            self.adjlist [kota1].remove (kota2)
+            return True
+        return False
+
+
+    
+petaindonesia = Peta ()
+#menambahkan vertex/kota
+petaindonesia.tambahkanKota("Gresik")
+petaindonesia.tambahkanKota("Lamongan")
+petaindonesia.tambahkanKota("Kediri")
+petaindonesia.tambahkanKota("Sidoarjo")
+petaindonesia.tambahkanKota("Mojokerto")
+petaindonesia.tambahkanKota("Nganjuk")
+petaindonesia.tambahkanKota("Bojonegoro")
+petaindonesia.tambahkanKota("Ngawi")
+petaindonesia.tambahkanKota("Magetan")
+petaindonesia.tambahkanKota("Ponorogo")
+
+#menghubungkan setiap vertex/kota menggunakan edge/jalan
+petaindonesia.tambahJalan("Gresik", "Lamongan" )
+petaindonesia.tambahJalan("Gresik","Sidoarjo")
+petaindonesia.tambahJalan("Gresik","Mojokerto") 
