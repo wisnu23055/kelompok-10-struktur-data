@@ -27,3 +27,34 @@ class Peta:
             del self.adjlist[city]
             return True
         return False
+
+    def add_connection(self, city1, city2, weight=1):
+        if city1 in self.adjlist and city2 in self.adjlist:
+            self.adjlist[city1].append((city2, weight))
+            self.adjlist[city2].append((city1, weight))
+            return True
+        return False
+
+    def remove_connection(self, city1, city2):
+        if city1 in self.adjlist and city2 in self.adjlist:
+            self.adjlist[city1] = [(conn, weight) for conn, weight in self.adjlist[city1] if conn != city2]
+            self.adjlist[city2] = [(conn, weight) for conn, weight in self.adjlist[city2] if conn != city1]
+            return True
+        return False
+
+petaindonesia = Peta()
+
+# Add cities
+cities = ["Gresik", "Lamongan", "Kediri", "Sidoarjo", "Mojokerto", "Nganjuk", "Bojonegoro", "Ngawi", "Magetan", "Ponorogo"]
+for city in cities:
+    petaindonesia.add_city(city)
+
+# Add connections
+connections = [
+    ("Gresik", "Lamongan", 10),
+    ("Gresik", "Sidoarjo", 5),
+    ("Gresik", "Mojokerto", 8),
+    ("Gresik", "Nganjuk", 12),
+    ("Lamongan", "Bojonegoro", 15),
+    ("Lamongan", "Ngawi", 20),
+    ("Lamongan", "Mojokerto", 18),
