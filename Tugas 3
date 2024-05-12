@@ -1,1 +1,29 @@
+class Peta:
+    def __init__(self):
+        self.adjlist = {}
 
+    def print_cities(self):
+        print("Cities:")
+        for city in self.adjlist:
+            print(f"{city}:")
+            connections = self.adjlist[city]
+            if not connections:
+                print("  No connections.")
+            else:
+                print("  Connections:")
+                for conn, weight in connections:
+                    print(f"    {conn} (weight: {weight})")
+
+    def add_city(self, city):
+        if city not in self.adjlist:
+            self.adjlist[city] = []
+            return True
+        return False
+
+    def remove_city(self, city):
+        if city in self.adjlist:
+            for other_city in self.adjlist:
+                self.adjlist[other_city] = [(conn, weight) for conn, weight in self.adjlist[other_city] if conn != city]
+            del self.adjlist[city]
+            return True
+        return False
