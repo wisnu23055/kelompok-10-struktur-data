@@ -58,3 +58,32 @@ connections = [
     ("Lamongan", "Bojonegoro", 15),
     ("Lamongan", "Ngawi", 20),
     ("Lamongan", "Mojokerto", 18),
+    ("Lamongan", "Kediri", 22),
+    ("Lamongan", "Nganjuk", 25),
+    ("Lamongan", "Magetan", 28),
+    ("Lamongan", "Sidoarjo", 30),
+    ("Kediri", "Nganjuk", 32),
+    ("Kediri", "Ponorogo", 35),
+    ("Kediri", "Bojonegoro", 31),
+    ("Kediri", "Mojokerto", 32),
+    ("Kediri", "Sidoarjo", 33),
+    ("Sidoarjo", "Mojokerto", 34),
+    ("Mojokerto", "Nganjuk", 35),
+    ("Mojokerto", "Bojonegoro", 36),
+    ("Mojokerto", "Ngawi", 37),
+    ("Nganjuk", "Bojonegoro", 38),
+    ("Nganjuk", "Ngawi", 39),
+    ("Nganjuk", "Magetan", 40),
+    ("Nganjuk", "Ponorogo", 41),
+    ("Bojonegoro", "Ngawi", 42),
+    ("Bojonegoro", "Magetan", 43),
+    ("Bojonegoro", "Ponorogo", 44),
+    ("Ngawi", "Magetan", 45),
+    ("Ngawi", "Ponorogo", 46),
+    ("Magetan", "Ponorogo", 47),
+]
+
+for connection in connections:
+    petaindonesia.add_connection(*connection)
+
+petaindonesia.print_cities()
